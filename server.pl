@@ -45,7 +45,7 @@ sub read_data {
 sub monitor {
     my $queue = shift;
 
-    # As of now, the monitor is invoked only every 30 seconds
+    # As of now, the monitor is invoked only every 10 seconds
     while (1) {
         while ($queue -> pending) {
             my $data = $queue -> dequeue;
