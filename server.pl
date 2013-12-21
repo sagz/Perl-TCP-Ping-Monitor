@@ -5,10 +5,10 @@ use IO::Socket;
 use threads;
 use Thread::Queue;
 
-#Defaulting to 8000
+# Defaulting to 42424
 my $port = $ARGV[0] || 42424;
 
-# storing list of connected clients sensors to monitor
+# Storing list of connected clients sensors to monitor
 my %clients;
 my $queue = Thread::Queue -> new;
 my $monitor = threads->create ("monitor", $queue);
@@ -39,8 +39,6 @@ sub read_data {
         print "Received: $_";
         $queue -> enqueue(time." $_");
     }
-    print $socket "Ping received by server.\n";
-    shutdown($socket, 1);
     close $socket
 }
 

@@ -20,11 +20,6 @@ while (1) {
 
     print "$me: Next ping in $frequency seconds\n";
     print $socket "$me: Next ping in $frequency seconds\n";
-    my $response = "";
-
-    # Read upto 24 characters 
-    $socket->recv($response, 24);
-    print "$response\n";
     close $socket;
     print "sleeping\n";
     sleep $frequency;
