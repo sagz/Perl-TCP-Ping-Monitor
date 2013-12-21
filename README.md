@@ -43,5 +43,6 @@ Features
  
 To - Do
 ==
++ Sanitize command line arguments
 + ANSI Colour output!
 + Rigorous testing suite
